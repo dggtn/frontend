@@ -20,11 +20,13 @@ export default function Login() {
   const loginData = { email: 'demo1@demo.com', password: '123456@demo' };
 
   const navigate = useNavigate();
-
+  function handleDemoLogin(){
+    navigate('/')
+  }
   function handleLogin(data) {
     setIsLoading(true);
     axios
-      .post('http://localhost:4002/v1/auth/registrarse', data)
+      .post('http://localhost:4002/v1/auth/autenticarse', data)
       .then((data) => {
         setUserToken(data.data.token);
         localStorage.setItem('authToken', data.data.token);
@@ -143,7 +145,7 @@ export default function Login() {
             ) : (
               <button
                 type="button"
-                onClick={() => handleLogin(loginData)}
+                onClick={() => handleDemoLogin()}
                 className={buttonProps.className}
               >
                 Demo Login

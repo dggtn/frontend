@@ -36,9 +36,9 @@ function App() {
         {
           index: true,
           element: (
-            <ProtectedRoute>
+            
               <Home />
-            </ProtectedRoute>
+           
           ),
         },
         {
@@ -50,7 +50,7 @@ function App() {
           ),
         },
         {
-          path: 'register',
+          path: 'registrarse',
           element: (
             <RedirectIfAuthenticated>
               <Register />
@@ -67,7 +67,7 @@ function App() {
           element: <ResetPassword />,
         },
         {
-          path: 'product/:id',
+          path: 'productos/:id',
           element: (
             <ProtectedRoute>
               <ProductDetails />
